@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+
+<head>
+    <title>Note Book</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="./static/index.css">
+</head>
+
+<body>
+    <div class="container" ng-controller="AppCtrl">
+        <h1 class="text-center text-primary">Note Book</h1>
+        <tr>
+            <td><button class="btn " data-toggle="modal" data-target="#myModal" id="addBtn">Add Sources</button></td>
+        </tr>
+        <table class="table">
+            <tr ng-repeat="source in Sources">
+                <td><b>{{source.modifytime}}</b></td>
+                <td>{{source.info}}</td>
+                <td><button class="btn btn-danger" ng-click="removeSources(source.id)">Remove</button></td>
+                <td><button class="btn btn-warning" id="editBtn" data-toggle="modal" data-target="#myModal2" ng-click="editSources(source.id)">Edit</button></td>
+            </tr>
+        </table>
+
+        <div class="modal fade changeAction" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-time" id="myModalLabel"></h4>
+                    </div>
+                    <div class="modal-body modal-inner">
+                        <textarea class="form-control" ng-model="source.info"></textarea>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">close</button>
+                        <button type="button" class="btn btn-primary" ng-click="addSources()">Submit</button>
+                    </div>
+
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal -->
+        </div>
+        <div class="modal fade changeAction" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-time" id="myModalLabel2">edit Sources</h4>
+                    </div>
+                    <div class="modal-body modal-inner">
+                        <textarea class="form-control" ng-model="source.info"></textarea>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">close</button>
+                        <button type="button" class="btn btn-primary" ng-click="update(source.id)">submit</button>
+                    </div>
+
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal -->
+        </div>
+    </div>
+
+</body>
+<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js "></script>
+<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js "></script>
+<script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js "></script>
+<script src="/controllers/controller.js "></script>
+<script src="./static/index.js "></script>
+
+</html>
