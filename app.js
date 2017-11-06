@@ -1,10 +1,3 @@
-// app.get('/', function(req, res) {
-//     res.render('home');
-// });
-
-// app.listen(app.get('port'), function() {
-//     console.log('Express started on http://localhost:' + app.get('port'));
-// });
 'use strict'
 var express = require('express');
 var AWS = require("aws-sdk");
@@ -37,8 +30,6 @@ app.engine('handlebars', handlebars.engine);
 app.set('view engine', 'handlebars');
 
 var createTable = require('./lib/create');
-
-
 
 app.use(function(req, res, next) {
     res.locals.showTests = app.get('env') !== 'production' && req.query.test === '1';
