@@ -2,7 +2,6 @@
 var express = require('express');
 var AWS = require("aws-sdk");
 var bodyParser = require('body-parser');
-var uuid = require('uuid');
 
 AWS.config.update({
     region: "us-west-2",
