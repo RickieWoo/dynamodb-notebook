@@ -1,4 +1,4 @@
-####dynamodb-notebook
+#### dynamodb-notebook
 
 use cmd , cd into the dynamoDB dir
 
