@@ -12,11 +12,17 @@
     <div class="container" ng-controller="AppCtrl">
         <h1 class="text-center text-primary">Note Book</h1>
         <tr>
-            <td><button class="btn " data-toggle="modal" data-target="#myModal" id="addBtn">Add Sources</button></td>
+            <td><button class="btn " data-toggle="modal" data-target="#myModal" id="addBtn">Add Notes</button></td>
         </tr>
         <table class="table">
+            <tr>
+                <td><b>modifytime</b></td>
+                <!-- <td>title</td> -->
+                <td><b>info</b></td>
+            </tr>
             <tr ng-repeat="source in Sources">
                 <td><b>{{source.modifytime}}</b></td>
+                <!-- <td>{{source.title}}</td> -->
                 <td>{{source.info}}</td>
                 <td><button class="btn btn-danger" ng-click="removeSources(source.id)">Remove</button></td>
                 <td><button class="btn btn-warning" id="editBtn" data-toggle="modal" data-target="#myModal2" ng-click="editSources(source.id)">Edit</button></td>

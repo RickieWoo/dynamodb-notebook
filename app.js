@@ -1,4 +1,4 @@
-'use strict'
+// 'use strict'
 var express = require('express');
 var AWS = require("aws-sdk");
 var bodyParser = require('body-parser');
@@ -12,7 +12,7 @@ var app = express();
 var docClient = new AWS.DynamoDB.DocumentClient();
 app.use(express.static(__dirname + "/public"));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true })) //将表单数据格式化
+app.use(bodyParser.urlencoded({ extended: true })); //将表单数据格式化
 
 var handlebars = require('express3-handlebars').create({
     defaultLayout: 'main',
