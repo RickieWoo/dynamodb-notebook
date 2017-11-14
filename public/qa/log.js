@@ -8,7 +8,7 @@ if (!fs.existsSync(logDir)) {
 	fs.mkdirSync(logDir);
 }
 const tsFormat = () => (new Date()).toLocaleTimeString();
-const logger = new(winston.Logger)({
+module.exports =  new(winston.Logger)({
 	transports: [
 		// colorize the output to the console
 		new(winston.transports.Console)({
@@ -23,6 +23,7 @@ const logger = new(winston.Logger)({
 		})
 	]
 });
-logger.info('Hello world');
-logger.warn('Warning message');
-logger.debug('Debugging info');
+// export {logger};
+// logger.info('Hello world');
+// logger.warn('Warning message');
+// logger.debug('Debugging info');

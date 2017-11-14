@@ -18,7 +18,10 @@
     "homepage": "https://github.com/kylin370/dynamodb-notebook#readme",
     "dependencies": {
         "aws-sdk": "^2.145.0",
+        "babel-preset-node6": "^11.0.0",
         "chai-http": "^3.0.0",
+        "debug": "^3.1.0",
+        "es-checker": "^1.4.1",
         "express": "^4.16.2",
         "express3-handlebars": "^0.5.2",
         "grunt-cafe-mocha": "^0.1.13",
@@ -27,7 +30,20 @@
         "mocha": "^4.0.1"
     },
     "devDependencies": {
+        "babel-cli": "^6.26.0",
         "chai": "^4.1.2",
-        "grunt": "^1.0.1"
+        "grunt": "^1.0.1",
+        "joi": "^13.0.2",
+        "winston": "^2.4.0"
+    },
+    "eslintConfig": {
+        "rules": {
+            "no-unused-vars": [
+                "error",
+                {
+                    "argsIgnorePattern": "next"
+                }
+            ]
+        }
     }
 }
